@@ -1,0 +1,59 @@
+
+
+
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" href="/assets/styles/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/styles/customFile.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="/feed.xml">
+
+    {% include head-custom.html %}
+
+{% seo %}
+
+<!-- Adsense Auto Ads Code -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9885194547171466"
+     crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <a id="a-title" href="{{ '/' | relative_url }}">
+          <h1>{{ site.title | default: site.github.repository_name }}</h1>
+        </a>
+        <h2>{{ site.description | default: site.github.project_tagline }}</h2>
+
+        <section >
+        <a href="https://www.twitter.com/alirazamumtaz" title="Twitter"><i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i></a>
+          <a href="https://www.github.com/alirazamumtaz" title="Github"><i class="fa fa-github-square fa-lg" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/in/alirazamumtaz" title="linkedin"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
+          <a  href="/feed.xml" target="_blank"><i class="fa fa-rss" aria-hidden="true"></i>
+          </a>
+
+        </section>
+        <a href="/"><button type="button" class="btn btn-outline-secondary" style="margin-bottom: 10px">Home</button></a>
+        <a href="/posts"><button type="button" class="btn btn-outline-secondary" style="margin-bottom: 10px">Posts</button></a>
+        <!-- <a href="/disclosures"><button type="button" class="btn btn-outline-secondary" style="margin-bottom: 10px">disclosures</button></a> -->
+        <a href="{{ site.baseurl }}/archive"><button type="button" class="btn btn-outline-secondary" style="margin-bottom: 10px">Archive</button></a>
+
+            </div>
+   </header>
+
+    <div class="container">
+      <section id="main_content">
+        {{ content }}
+      </section>
+      {% include multiplexAds.html %}
+    </div>
+    {% include google-analytics.html %}
+  </body>
+</html>
